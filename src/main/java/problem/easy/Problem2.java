@@ -1,6 +1,8 @@
 package problem.easy;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem2 {
 
@@ -11,7 +13,18 @@ public class Problem2 {
      * @return 각 요소를 제곱한 새 리스트
      */
     public static List<Integer> squareNumbers(List<Integer> numbers) {
-        // 여기에 코드 작성
-        return null;
+        return numbers.stream()
+                .map(n -> n*n)
+                .collect(Collectors.toList());
+    }
+
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+
+        numbers.add(1);
+        numbers.add(3);
+        numbers.add(5);
+
+        System.out.println(squareNumbers(numbers).toString());
     }
 }

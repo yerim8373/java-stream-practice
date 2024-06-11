@@ -1,5 +1,6 @@
 package problem.easy;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +14,10 @@ public class Problem8 {
      */
     public static Optional<Integer> findFirstEven(List<Integer> numbers) {
         // 여기에 코드 작성
-        return Optional.empty();
+        return numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .findFirst();
+
+//        return Optional.of(numbers.stream().filter(x -> x % 2 == 0).findFirst()).orElse(Optional.empty());
     }
 }

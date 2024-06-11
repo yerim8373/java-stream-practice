@@ -1,6 +1,8 @@
 package problem.easy;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem1 {
 
@@ -11,6 +13,18 @@ public class Problem1 {
      * @return 길이가 5 이상인 문자열만 포함하는 리스트
      */
     public static List<String> filterStrings(List<String> strings) {
-        return null;
+        return strings.stream()
+                .filter(s -> s.length() >= 5)
+                .collect(Collectors.toList());
+    }
+
+    public static void main(String[] args) {
+        List<String> strings = new ArrayList<>();
+
+        strings.add("Hello");
+        strings.add("Hi");
+        strings.add("Byeeee");
+
+        System.out.println( filterStrings(strings).toString() );
     }
 }

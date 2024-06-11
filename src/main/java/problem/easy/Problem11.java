@@ -13,6 +13,10 @@ public class Problem11 {
      */
     public static Optional<Integer> findFirstGreaterThanTen(Set<Integer> numbers) {
         // 여기에 코드 작성
-        return Optional.empty();
+        return Optional.of(
+                numbers.stream()
+                .filter(n -> n > 10)
+                .findFirst())
+                .orElse(Optional.empty());
     }
 }

@@ -1,6 +1,7 @@
 package problem.easy;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem5 {
 
@@ -12,6 +13,13 @@ public class Problem5 {
      */
     public static String concatenateStrings(List<String> strings) {
         // 여기에 코드 작성
-        return "";
+//        return strings.stream()
+//                .map(s -> s += s)
+//                .toString();
+//        return strings.stream()
+//                .reduce((acc, x) -> acc + x)
+//                .orElse("");
+        return strings.stream()
+                .collect(Collectors.joining());
     }
 }
